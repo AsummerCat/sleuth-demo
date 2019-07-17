@@ -1,15 +1,15 @@
 package com.linjingc.serverbdemo.controller;
 
-import com.linjingc.serverbdemo.service.GoBservice;
+import com.linjingc.serverbdemo.service.GoAservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/a")
+@RequestMapping("/b")
 public class serverController {
     @Autowired
-    private GoBservice goBservice;
+    private GoAservice goAservice;
 
     /**
      * 本地请求
@@ -26,9 +26,9 @@ public class serverController {
      *
      * @return
      */
-    @RequestMapping("/goB")
-    public String goB() {
-        return goBservice.info();
+    @RequestMapping("/goA")
+    public String goA() {
+        return goAservice.info();
     }
 
 }

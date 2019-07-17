@@ -5,9 +5,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Service
-@FeignClient("server-b-demo")
-public interface GoBservice {
+@FeignClient("server-a-demo")
+public interface GoAservice {
 
-    @RequestMapping(value = "info")
+    @RequestMapping(value = "/a/info")
     String info();
 }

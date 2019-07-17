@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @FeignClient("server-b-demo")
 public interface GoBservice {
 
-    @RequestMapping(value = "info")
+    @RequestMapping(value = "/b/info")
     String info();
 }
