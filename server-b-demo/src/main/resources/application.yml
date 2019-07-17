@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: server-b-demo
+
+  # 配置链路相关信息
+  sleuth:
+    sampler:
+      #设置sleuth收集信息的比率为1表示全部 , 0.1 默认10%
+      probability: 1
+  zipkin:
+    #zipkin服务端地址
+    base-url: http://localhost:9411
+    #discovery-client-enabled: true
+
+server:
+  port: 9002
+
+
+## eureka
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9000/eureka
+    healthcheck:
+      enabled: true

@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: server-log-demo
+server:
+  port: 9003
+
+
+## eureka
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9000/eureka
+    healthcheck:
+      enabled: true
